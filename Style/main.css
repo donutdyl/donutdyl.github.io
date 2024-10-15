@@ -1,0 +1,284 @@
+:root {
+    --color--background: var(--off-white);
+    --position--body: relative;
+    --position--footer: relative;
+    --position--header: relative;
+    --color--primary: var(--green);
+    --color--text: var(--grey)
+}
+
+:root {
+    --blue: #2286EA;
+    --green: #29AA35;
+    --grey: #414042;
+    --pink: #F5989D;
+    --yellow: #FFBF00;
+    --off-white: #F5F5F5
+}
+
+.cards {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: 100%;
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0
+}
+
+.cards:last-child {
+    margin-bottom: 0
+}
+
+.cards .card {
+    flex: 0 0 auto;
+    flex-basis: calc(100% + 0rem);
+    max-width: calc(100% + 0rem);
+    border-radius: .3125rem;
+    box-shadow: 0 1px 1px #00000013,0 2px 2px #00000013,0 4px 4px #00000013,0 8px 8px #00000013;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    transition: box-shadow .25s ease-in-out
+}
+
+@media (min-width: 48rem) {
+    .cards .card {
+        flex:0 0 auto;
+        flex-basis: calc(50% - .625rem);
+        max-width: calc(50% - .625rem)
+    }
+}
+
+.cards .card .icon {
+    height: 2.5rem;
+    margin-bottom: 1.25rem
+}
+
+
+.main__content {
+    padding: 1.25rem
+}
+
+.page-footer {
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+    position: var(--position--footer);
+    transition: all .25s ease-in-out;
+    width: 100%;
+    z-index: 100
+}
+
+html {
+    font-family: Operator Mono SSm,monospace;
+    font-size: 1rem;
+    line-height: 1.25rem
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: Campton,sans-serif;
+    font-weight: 700;
+    margin-top: 0
+}
+
+h1.no-margin-bottom,h2.no-margin-bottom,h3.no-margin-bottom,h4.no-margin-bottom,h5.no-margin-bottom {
+    margin-bottom: 0
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 2.5rem
+}
+
+h1>* {
+    display: inline;
+    width: auto
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 3.75rem;
+    margin-bottom: 1.25rem
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.25rem
+}
+
+h4 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-bottom: 1.25rem
+}
+
+p {
+    margin-bottom: 1.25rem;
+    margin-top: 0
+}
+
+p:last-child {
+    margin-bottom: 0
+}
+
+a {
+    color: var(--color--primary);
+    text-decoration: none
+}
+
+a.icon-link {
+    display: inline-block;
+    line-height: 3.75rem;
+    vertical-align: middle
+}
+
+a.icon-link span {
+    display: none
+}
+
+a.icon-link .icon {
+    height: 3rem;
+    vertical-align: middle
+}
+
+.emoji {
+    font-size: 1.25rem;
+    vertical-align: middle
+}
+
+#life-simulator {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    z-index: 1
+}
+
+#life-simulator .canvas {
+    direction: rtl;
+    display: grid;
+    grid-auto-flow: row;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden
+}
+
+#life-simulator .canvas .cell {
+    background: #414042;
+    display: block;
+    height: 1.25rem;
+    opacity: 0;
+    overflow: visible;
+    position: relative;
+    width: 1.25rem;
+    z-index: 1
+}
+
+#life-simulator .canvas .cell--alive {
+    opacity: 1
+}
+
+#life-simulator .header-controls {
+    padding: 1.25rem;
+    position: fixed;
+    right: 0;
+    top: 5rem;
+    z-index: 1
+}
+
+#life-simulator .controls {
+    padding: calc(100vh - 3.75rem) 1.25rem 1.25rem 1.25rem;
+    position: relative
+}
+
+#mstrblstr {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw
+}
+
+#mstrblstr .start {
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+
+#mstrblstr .start.hidden {
+    display: none
+}
+
+#mstrblstr .prev-next {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+#mstrblstr .prev-next svg {
+    display: block;
+    height: 2.5rem;
+    width: auto
+}
+
+#mstrblstr .prev-next svg rect {
+    fill: var(--color--text)
+}
+
+#mstrblstr .prev-next.hidden {
+    display: none
+}
+
+#mstrblstr .prev-next--prev {
+    left: 1.25rem
+}
+
+#mstrblstr .prev-next--prev svg {
+    transform: rotate(180deg)
+}
+
+#mstrblstr .prev-next--next {
+    right: 1.25rem
+}
+
+#mstrblstr video {
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100vw
+}
+
+#mstrblstr .attributions {
+    bottom: 2.5rem;
+    left: 0;
+    padding: 1.25rem;
+    position: absolute
+}
+
+#mstrblstr .attributions p:last-of-type {
+    margin: 0
+}
+
+#mstrblstr #audio-player {
+    opacity: 0;
+    pointer-events: none
+}
+
+#physics-playground {
+    height: 100vh;
+    width: 100vw
+}
