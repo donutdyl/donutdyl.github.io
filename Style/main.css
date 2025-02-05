@@ -96,6 +96,27 @@ a:hover {
     color: #32CD32;
 }
 
+/* FileRepository Button */
+.file-repo-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #00FF7F; /* Matches site theme */
+    color: #181A1B; /* Dark text for contrast */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #00FF7F;
+    transition: all 0.3s ease-in-out;
+}
+
+.file-repo-btn:hover {
+    background-color: #32CD32; /* Matches hover effect of links */
+    border-color: #32CD32;
+    color: #181A1B;
+}
+
 /* For small screens */
 @media only screen and (max-width: 600px) {
     .main__content {
